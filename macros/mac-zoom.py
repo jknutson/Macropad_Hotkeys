@@ -19,9 +19,9 @@ app = {                         # REQUIRED dict, must be named 'app'
         (0x101010, 'Rotate', 'r'),  # Rotate selection
         (0x101010, 'Oval', 'l'),    # Draw ellipse
         # 4th row ----------
-        (0x101010, 'Eyedrop', 'i'), # Cycle eyedropper/measure modes
-        (0x101010, 'Scale', 's'),   # Scale selection
-        (0x101010, 'Text', 't'),    # Type tool
+        (0x000040, '', Keycode.SPACEBAR),
+        (0x000040, 'Toggle Mute', Keycode.SPACEBAR),
+        (0x000040, '', Keycode.SPACEBAR),
         # Encoder button ---
         (0x000000, '', [Keycode.COMMAND, Keycode.OPTION, 'S']) # Save for web
     ]

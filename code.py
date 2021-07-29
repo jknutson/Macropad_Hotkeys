@@ -80,6 +80,8 @@ for FILENAME in FILES:
             APPS.append(App(module.app))
         except (SyntaxError, ImportError, AttributeError, KeyError, NameError,
                 IndexError, TypeError) as err:
+            print(FILENAME)
+            print(err)
             pass
 
 if not APPS:

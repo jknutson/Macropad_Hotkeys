@@ -134,18 +134,30 @@ while True:
             MACROPAD.pixels[KEY_NUMBER] = 0xFFFFFF
             MACROPAD.pixels.show()
         for item in SEQUENCE:
-            if isinstance(item, int):
-                if item >= 0:
-                    MACROPAD.keyboard.press(item)
-                else:
-                    MACROPAD.keyboard.release(item)
+            # MIDI untested
+            if APPS[APP_INDEX].name[:4] == 'MIDI':
+                if isinstance(item, int):
+                    if item >= 0:
+                        MACROPAD.midi.send(MACROPAD.NoteOn(item, 127))
+                    else:  # not sure this is needed/makes sense here
+                        MACROPAD.midi.send(MACROPAD.NoteOff(item, 0))
             else:
-                MACROPAD.keyboard_layout.write(item)
+                if isinstance(item, int):
+                    if item >= 0:
+                        MACROPAD.keyboard.press(item)
+                    else:
+                        MACROPAD.keyboard.release(item)
+                else:
+                    MACROPAD.keyboard_layout.write(item)
     else:
         # Release any still-pressed modifier keys
-        for item in SEQUENCE:
-            if isinstance(item, int) and item >= 0:
-                MACROPAD.keyboard.release(item)
-        if KEY_NUMBER < 12: # No pixel for encoder button
-            MACROPAD.pixels[KEY_NUMBER] = APPS[APP_INDEX].macros[KEY_NUMBER][0]
-            MACROPAD.pixels.show()
+        if APPS[APP_INDEX].name[:4] == 'MIDI':
+            if isinstance(item, int):
+                MACROPAD.midi.send(MACROPAD.NoteOff(item, 0))
+        else:
+            for item in SEQUENCE:
+                if isinstance(item, int) and item >= 0:
+                    MACROPAD.keyboard.release(item)
+            if KEY_NUMBER < 12: # No pixel for encoder button
+                MACROPAD.pixels[KEY_NUMBER] = APPS[APP_INDEX].macros[KEY_NUMBER][0]
+                MACROPAD.pixels.show()

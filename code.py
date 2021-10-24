@@ -95,7 +95,6 @@ LAST_ENCODER_SWITCH = MACROPAD.encoder_switch_debounced.pressed
 APP_INDEX = 0
 APPS[APP_INDEX].switch()
 
-
 # MAIN LOOP ----------------------------
 
 while True:

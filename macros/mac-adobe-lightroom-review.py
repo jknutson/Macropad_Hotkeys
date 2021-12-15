@@ -13,9 +13,9 @@ app = {                      # REQUIRED dict, must be named 'app'
     'macros' : [             # List of button macros...
         # COLOR    LABEL    KEY SEQUENCE
         # 1st row ----------
-        (BLUE, 'Undo', [Keycode.COMMAND, 'Z']),
-        (BLUE, 'Redo', [Keycode.SHIFT, Keycode.COMMAND, 'Z']),
-        (GREEN, 'OG', '/'),
+        (BLUE, 'Grid', 'g'),
+        (BLUE, 'Detail', 'd'),
+        (GREEN, 'Full', 'f'),
         # 2nd row ----------
         (BLUE,  'Esc', [Keycode.ESCAPE]),
         (RED,   'Del', [Keycode.DELETE]),

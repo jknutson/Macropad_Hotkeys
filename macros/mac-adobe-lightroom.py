@@ -21,9 +21,9 @@ app = {                      # REQUIRED dict, must be named 'app'
         (RED,   'Del', [Keycode.DELETE]),
         (GREEN, 'Ent', [Keycode.ENTER]),
         # 3rd row ----------
-        (WHITE, 'Pics', 'P'),
-        (WHITE, 'Edit', 'E'),
-        (WHITE, 'Crop', 'C'),
+        (WHITE, 'Pics', 'p'),
+        (WHITE, 'Edit', 'e'),
+        (WHITE, 'Crop', 'c'),
         # 4th row ----------
         (BLUE,  '<-', [Keycode.LEFT_ARROW]),
         (WHITE, '+',  [Keycode.SPACEBAR]),

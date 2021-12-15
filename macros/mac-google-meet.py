@@ -16,7 +16,7 @@ app = {                         # REQUIRED dict, must be named 'app'
         # 1st row ----------
         (GREEN, 'Mute',  [Keycode.COMMAND, 'd']),
         (YELLOW, 'Video', [Keycode.COMMAND, 'e']),
-        (RED, 'Leave', [Keycode.COMMAND, 'W']),
+        (RED, 'Close', [Keycode.COMMAND, 'w']),
         # 2nd row ----------
         (WHITE, '', 'v'),
         (WHITE, '', 'o'),

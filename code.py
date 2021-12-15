@@ -74,14 +74,14 @@ APPS = []
 FILES = os.listdir(MACRO_FOLDER)
 FILES.sort()
 for FILENAME in FILES:
-    if FILENAME.endswith('.py'):
+    if FILENAME.endswith('.py') and not FILENAME.startswith('._'):
         try:
             module = __import__(MACRO_FOLDER + '/' + FILENAME[:-3])
             APPS.append(App(module.app))
         except (SyntaxError, ImportError, AttributeError, KeyError, NameError,
                 IndexError, TypeError) as err:
-            print(FILENAME)
-            print(err)
+            print('error loading file: {}'.format(FILENAME))
+            print('  {}'.format(err))
             pass
 
 if not APPS:
@@ -94,6 +94,7 @@ LAST_POSITION = None
 LAST_ENCODER_SWITCH = MACROPAD.encoder_switch_debounced.pressed
 APP_INDEX = 0
 APPS[APP_INDEX].switch()
+
 
 # MAIN LOOP ----------------------------
 

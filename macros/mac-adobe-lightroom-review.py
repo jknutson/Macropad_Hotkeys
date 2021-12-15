@@ -9,21 +9,21 @@ GREEN = 0x004000
 BLUE = 0x000040
 
 app = {                      # REQUIRED dict, must be named 'app'
-    'name' : 'Lightroom CC', # Application name
+    'name' : 'Lightroom Review', # Application name
     'macros' : [             # List of button macros...
         # COLOR    LABEL    KEY SEQUENCE
         # 1st row ----------
-        (BLUE, 'Undo', [Keycode.COMMAND, 'Z']),
-        (BLUE, 'Redo', [Keycode.SHIFT, Keycode.COMMAND, 'Z']),
-        (GREEN, 'OG', '/'),
+        (BLUE, 'Grid', 'g'),
+        (BLUE, 'Detail', 'd'),
+        (GREEN, 'Full', 'f'),
         # 2nd row ----------
         (BLUE,  'Esc', [Keycode.ESCAPE]),
         (RED,   'Del', [Keycode.DELETE]),
         (GREEN, 'Ent', [Keycode.ENTER]),
         # 3rd row ----------
-        (WHITE, 'Pics', 'p'),
-        (WHITE, 'Edit', 'e'),
-        (WHITE, 'Crop', 'c'),
+        (GREEN, 'Pick', 'z'),
+        (BLUE, 'Unpick', 'u'),
+        (RED, 'Reject', 'x'),
         # 4th row ----------
         (BLUE,  '<-', [Keycode.LEFT_ARROW]),
         (WHITE, '+',  [Keycode.SPACEBAR]),

@@ -17,9 +17,9 @@ app = {                      # REQUIRED dict, must be named 'app'
         (BLUE, 'Detail', 'd'),
         (GREEN, 'Full', 'f'),
         # 2nd row ----------
-        (BLUE,  'Esc', [Keycode.ESCAPE]),
-        (RED,   'Del', [Keycode.DELETE]),
-        (GREEN, 'Ent', [Keycode.ENTER]),
+        (BLUE, '<', [Keycode.COMMAND, '[']),
+        (WHITE,   'Rotate', [Keycode.SPACEBAR]),
+        (BLUE, '>', [Keycode.COMMAND, ']']),
         # 3rd row ----------
         (GREEN, 'Pick', 'z'),
         (BLUE, 'Unpick', 'u'),
